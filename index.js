@@ -1,8 +1,20 @@
-const divisions = require('./assets/divisions.json')
-const districts = require('./assets/districts.json')
-const upazillas = require('./assets/upazillas.json')
-const postOffices = require('./assets/postOffice.json')
-const unions = require('./assets/unions.json')
+const zlib = require('zlib');
+const fs = require('fs');
+
+const divisionsBuffer = zlib.gunzipSync(fs.readFileSync('./assets/divisions.json.gz'))
+const divisions = JSON.parse(divisionsBuffer.toString())
+
+const districtsBuffer = zlib.gunzipSync(fs.readFileSync('./assets/districts.json.gz'))
+const districts = JSON.parse(districtsBuffer.toString())
+
+const upazillasBuffer = zlib.gunzipSync(fs.readFileSync('./assets/upazillas.json.gz'))
+const upazillas = JSON.parse(upazillasBuffer.toString())
+
+const postOfficesBuffer = zlib.gunzipSync(fs.readFileSync('./assets/postoffices.json.gz'))
+const postOffices = JSON.parse(postOfficesBuffer.toString())
+
+const unionsBuffer = zlib.gunzipSync(fs.readFileSync('./assets/unions.json.gz'))
+const unions = JSON.parse(unionsBuffer.toString())
 
 class BD {
     static divisions(){
@@ -76,3 +88,5 @@ class BD {
     }
 
 }
+
+console.log(BD.districts())

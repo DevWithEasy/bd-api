@@ -8,7 +8,7 @@
     "build": "babel index.js -d dist",
     "minify": "terser dist/index.js -o dist/index.min.js",
     "prepare": "npm run build && npm run minify"
-  },  
+  },
   "author": "DevWithEasy",
   "license": "MIT",
   "devDependencies": {
@@ -16,5 +16,16 @@
     "@babel/core": "^7.23.5",
     "@babel/preset-env": "^7.23.5",
     "terser": "^5.25.0"
+  },
+  "files": [
+    "index.js",
+    "assets/divisions.json.gz",
+    "assets/districts.json.gz",
+    "assets/upazillas.json.gz",
+    "assets/postOffices.json.gz",
+    "assets/unions.json.gz"
+  ],
+  "dependencies": {
+    "zlib": "^1.0.5"
   }
 }

@@ -1,0 +1,3 @@
+install 7 zip
+and compress command
+"C:\Program Files\7-Zip\7z.exe" a -tgzip "assets\districts.json.gz" "assets\districts.json"
